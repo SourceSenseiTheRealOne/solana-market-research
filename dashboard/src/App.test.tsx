@@ -34,6 +34,7 @@ describe('App', () => {
 
     expect(screen.getByRole('main')).toHaveTextContent('Loading read-only paper-trading data')
     expect(screen.getByRole('heading', { name: 'Paper bot operations' })).toBeVisible()
+    expect(screen.getByText('Solana Market Research')).toBeVisible()
     expect(await screen.findByRole('table', { name: 'Open paper positions' })).toHaveTextContent('public-token-mint')
     expect(screen.getByText('Read-only · paper trades only')).toBeVisible()
   })

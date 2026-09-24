@@ -22,4 +22,4 @@ Provider adapters enforce allowlisted base URLs, context deadlines, response-siz
 
 ## Approval boundaries
 
-Human approval is required for any provider credential creation, hosted deployment, destructive database reset/volume deletion, remote migration, production resource, paid API usage beyond agreed limits, or any proposal to add blockchain-write capability. Mainnet interaction is outside scope.
+Human approval is required for any provider credential creation, hosted deployment, destructive database reset/volume deletion, remote migration, production resource, paid API usage beyond agreed limits, or any proposal to add blockchain-write capability. Only read-only Solana Mainnet market/RPC evidence is used; blockchain writes and real-fund execution remain outside scope.

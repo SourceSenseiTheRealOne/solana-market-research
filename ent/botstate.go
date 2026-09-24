@@ -10,7 +10,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/botstate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/botstate"
 )
 
 // BotState is the model entity for the BotState schema.

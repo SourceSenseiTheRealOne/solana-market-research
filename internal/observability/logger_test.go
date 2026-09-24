@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/observability"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/observability"
 )
 
 func TestDailyJSONLoggerRedactsSecretsAndWritesUTCNamedFile(t *testing.T) {

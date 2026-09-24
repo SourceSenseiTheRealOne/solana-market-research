@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/ports"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/ports"
 )
 
 func TestDiscoveryPersistsThroughWatermarkOverlapThenAdvances(t *testing.T) {

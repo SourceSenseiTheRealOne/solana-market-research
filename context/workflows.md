@@ -12,7 +12,7 @@ Run focused RED/GREEN tests for each behavior, then `go test ./...`, `go test -r
 
 ## Local runtime and recovery
 
-Initialize local database files with `uv run labctl init-supabase solana-hype-paper-bot --json`. Start only this project’s Supabase stack; stop another project’s stack first without `--no-backup`. Do not retain `supabase status` output because it contains credentials. Rebuild the schema from migrations and sanitized seed data before integration checks.
+Reuse the tracked `supabase/config.toml` and migrations; do not reinitialize the database identity after a repository rename. See `../docs/local-setup.md` for standalone setup. Start only this project’s Supabase stack; stop another project’s stack first without `--no-backup`. Do not retain `supabase status` output because it contains credentials. Rebuild the schema from migrations and sanitized seed data before integration checks.
 
 A fresh clone initializes submodules, restores `.env.local` only from the owner’s secure store, installs exact Go and pnpm lock dependencies, initializes the project-owned Supabase config, applies migrations, and runs the documented gates. Recovery replays pending paper-position state idempotently; it never creates a live trade.
 

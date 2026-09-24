@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
 )
 
 type Options struct {

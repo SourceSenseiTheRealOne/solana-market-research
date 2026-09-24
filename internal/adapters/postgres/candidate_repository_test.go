@@ -8,19 +8,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/apiusage"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/botstate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidatesnapshot"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/socialsnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/apiusage"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/botstate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidatesnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/socialsnapshot"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/verdict"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/testsupport"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/verdict"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/testsupport"
 )
 
 func TestCandidateRepositoryPersistsIdempotentlyAndRoundTripsDiscoveryState(t *testing.T) {

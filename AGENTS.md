@@ -1,4 +1,4 @@
-# Solana Hype Paper Bot Agent Rules
+# Solana Market Research Agent Rules
 
 ## Context and boundaries
 

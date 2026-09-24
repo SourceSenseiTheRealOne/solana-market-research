@@ -7,9 +7,9 @@ import (
 	"math"
 
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/socialsnapshot"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/socialsnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 type TwitterAnalyticsRepository struct {
