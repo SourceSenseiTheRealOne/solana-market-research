@@ -3,7 +3,7 @@ package application
 import (
 	"context"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 type AutomationActivityStore interface {

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 	"github.com/caarlos0/env/v11"
 )
 

@@ -7,7 +7,7 @@ import (
 
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/predicate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

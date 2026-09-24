@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
 	// required by schema hooks.
-	_ "github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/runtime"
+	_ "github.com/SourceSenseiTheRealOne/solana-market-research/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/migrate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/migrate"
 )
 
 type (

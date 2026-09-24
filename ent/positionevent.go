@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionevent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionevent"
 )
 
 // PositionEvent is the model entity for the PositionEvent schema.

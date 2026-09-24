@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestTwitterAnalyticsRepositoryReturnsNewestSafeAggregateSnapshots(t *testing.T) {

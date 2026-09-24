@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/dailyresult"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/dailyresult"
 )
 
 // DailyResult is the model entity for the DailyResult schema.

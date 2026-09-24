@@ -9,8 +9,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionmark"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionmark"
 )
 
 // PositionMark is the model entity for the PositionMark schema.

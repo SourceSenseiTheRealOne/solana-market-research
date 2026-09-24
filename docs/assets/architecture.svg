@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">Solana Market Research architecture</title>
+<desc id="desc">Read-only public data feeds a serial Go research process. A restricted Hermes gateway provides advisory verdicts. The process stores decisions and virtual positions in local PostgreSQL. A GET-only API serves a loopback React dashboard. No wallet or blockchain-write component exists.</desc>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1e293b" stroke-width="0.5"/></pattern>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#94a3b8"/></marker>
+  <style>text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;fill:#e2e8f0}.title{font-size:27px;font-weight:700}.label{font-size:18px;font-weight:700}.body{font-size:14px}.muted{fill:#94a3b8;font-size:13px}.line{fill:none;stroke:#94a3b8;stroke-width:1.8;marker-end:url(#arrow)}</style>
+</defs>
+<rect width="1200" height="800" fill="#020617"/>
+<rect width="1200" height="800" fill="url(#grid)"/>
+<text x="32" y="44" class="title">Solana Market Research</text>
+<text x="32" y="70" class="muted">Source-level architecture · local operation · paper positions only</text>
+<rect x="328" y="94" width="840" height="612" rx="12" fill="none" stroke="#fb7185" stroke-dasharray="8 5"/>
+<text x="350" y="121" class="muted">OPERATOR MACHINE / LOCAL CONTAINERS</text>
+<!-- Connections appear behind the opaque service cards. -->
+<path d="M296 236H360" class="line"/>
+<path d="M752 207H824" class="line" marker-start="url(#arrow)"/>
+<path d="M548 340V420" class="line" marker-start="url(#arrow)"/>
+<text x="562" y="380" class="muted">typed reads / atomic writes</text>
+<path d="M752 470H824" class="line"/>
+<path d="M980 516V578" class="line"/>
+<text x="992" y="554" class="muted">GET</text>
+<!-- Public read sources. -->
+<rect x="32" y="158" width="264" height="224" rx="6" fill="#0f172a"/>
+<rect x="32" y="158" width="264" height="224" rx="6" fill="#1e293b" fill-opacity="0.5" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="52" y="190" class="label">Public data sources</text>
+<text x="52" y="225" class="body">DexScreener · GeckoTerminal</text>
+<text x="52" y="254" class="body">Helius RPC · Jupiter quotes</text>
+<text x="52" y="283" class="body">TwitterAPI.io social reads</text>
+<text x="52" y="323" class="muted">Bounded requests and deadlines</text>
+<text x="52" y="347" class="muted">Credentials stay server-side</text>
+<!-- Research process. -->
+<rect x="360" y="158" width="392" height="182" rx="6" fill="#0f172a"/>
+<rect x="360" y="158" width="392" height="182" rx="6" fill="#064e3b" fill-opacity="0.4" stroke="#34d399" stroke-width="1.5"/>
+<text x="380" y="190" class="label">Go research process</text>
+<text x="380" y="225" class="body">Discover → filter → evaluate → admit</text>
+<text x="380" y="254" class="body">Simulate entries · monitor exits</text>
+<text x="380" y="291" class="muted">Serial scan / monitor / retry jobs</text>
+<text x="380" y="315" class="muted">Deterministic policy owns admission</text>
+<!-- Local advisory gateway. -->
+<rect x="824" y="158" width="312" height="182" rx="6" fill="#0f172a"/>
+<rect x="824" y="158" width="312" height="182" rx="6" fill="#881337" fill-opacity="0.3" stroke="#fb7185" stroke-width="1.5"/>
+<text x="844" y="190" class="label">Restricted Hermes gateway</text>
+<text x="844" y="225" class="body">Sanitized evidence in</text>
+<text x="844" y="254" class="body">Advisory verdict out</text>
+<text x="844" y="291" class="muted">No trade-execution authority</text>
+<text x="844" y="315" class="muted">Model inference may be remote</text>
+<!-- Database. -->
+<rect x="360" y="420" width="392" height="176" rx="6" fill="#0f172a"/>
+<rect x="360" y="420" width="392" height="176" rx="6" fill="#4c1d95" fill-opacity="0.4" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="380" y="453" class="label">Local PostgreSQL / Supabase</text>
+<text x="380" y="487" class="body">Ent queries · reviewed SQL migrations</text>
+<text x="380" y="517" class="body">Decisions · virtual positions · events</text>
+<text x="380" y="550" class="muted">Serializable admission and UTC quotas</text>
+<text x="380" y="575" class="muted">Durable retry leases · retained cohorts</text>
+<!-- Projection boundary. -->
+<rect x="824" y="420" width="312" height="96" rx="6" fill="#0f172a"/>
+<rect x="824" y="420" width="312" height="96" rx="6" fill="#064e3b" fill-opacity="0.4" stroke="#34d399" stroke-width="1.5"/>
+<text x="844" y="453" class="label">Read-only Go HTTP API</text>
+<text x="844" y="487" class="body">Bounded dashboard projections</text>
+<!-- User interface. -->
+<rect x="824" y="578" width="312" height="96" rx="6" fill="#0f172a"/>
+<rect x="824" y="578" width="312" height="96" rx="6" fill="#083344" fill-opacity="0.4" stroke="#22d3ee" stroke-width="1.5"/>
+<text x="844" y="611" class="label">React / Vite dashboard</text>
+<text x="844" y="645" class="body">Loopback-only · no direct DB access</text>
+<text x="360" y="646" class="body" style="fill:#fb7185">No wallets, signing, swaps,</text>
+<text x="360" y="671" class="body" style="fill:#fb7185">or blockchain-write path</text>
+<!-- Legend stays outside the local boundary. -->
+<circle cx="40" cy="744" r="5" fill="#34d399"/><text x="54" y="749" class="muted">Backend</text>
+<circle cx="170" cy="744" r="5" fill="#a78bfa"/><text x="184" y="749" class="muted">Persistence</text>
+<circle cx="325" cy="744" r="5" fill="#22d3ee"/><text x="339" y="749" class="muted">Frontend</text>
+<circle cx="460" cy="744" r="5" fill="#fb7185"/><text x="474" y="749" class="muted">Authority boundary</text>
+<text x="32" y="780" class="muted">Architecture illustration, not a runtime screenshot, deployment claim, or performance result.</text>
+</svg>

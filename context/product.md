@@ -2,7 +2,7 @@
 
 ## Identity
 
-- **Name:** Solana Hype Paper Bot
+- **Name:** Solana Market Research
 - **Owner:** SourceSensei
 - **Trust boundary:** personal
 - **Source/runtime:** public source; local Windows-hosted runtime only.

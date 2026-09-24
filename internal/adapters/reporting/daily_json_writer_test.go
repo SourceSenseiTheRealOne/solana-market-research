@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/reporting"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/reporting"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestDailyJSONReportWriterWritesStableUTCSnapshot(t *testing.T) {

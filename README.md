@@ -1,66 +1,51 @@
-# Solana Hype Paper Bot
+# Solana Market Research
 
-Local, public-source research software for discovering and evaluating new Solana token pools with **paper trades only**. It records bounded public market and social evidence, simulates fixed-notional entries/exits, and serves a read-only dashboard on loopback.
+A local Go system for collecting Solana token-pool evidence and evaluating a paper-trading policy. It combines bounded market and social reads, deterministic rules, an advisory model, and transactional PostgreSQL persistence. A read-only React dashboard shows the resulting decisions and virtual positions.
 
-## Hard safety boundary
+**Status:** independent research software, public source, local-only runtime. All trades are simulated database records. There is no hosted service, wallet integration, transaction signing, or blockchain execution. Paper results do not establish a profitable strategy.
 
-This repository must never contain wallet support, seed phrases, private keys, signing, transaction construction, swap execution, Trigger orders, or any blockchain write. A paper position is always a local database record; it is never an order.
+![Architecture: public data sources feed a bounded Go research pipeline, local PostgreSQL, and a read-only dashboard](docs/assets/architecture.svg)
 
-## Policy defaults
+[Engineering decisions](docs/engineering.md) · [Local setup](docs/local-setup.md) · [Tests and CI](https://github.com/SourceSenseiTheRealOne/solana-market-research/actions) · [MIT license](LICENSE)
 
-- Active strategy: **`bold-momentum-v3`**
-- Paper notional: **$100**
-- Concurrent virtual positions: **3 maximum**
-- New virtual positions: **30 maximum per UTC day**
-- Minimum market activity: **20 combined buys and sells per five minutes**
-- Minimum five-minute buy share: **60%**
-- Transient market-evidence retry: **one candidate every 30 seconds**, maximum **5**, expiring after **10 minutes**
-- Exit policy: **+50% take profit**, **-20% stop loss**, or **45-minute timeout**
-- Timestamps and quota buckets: **UTC**
+## What is implemented
 
-## Local setup
+- Market discovery and eligibility checks run before paid social and model requests. Provider requests have explicit limits and deadlines.
+- Serializable database transactions reserve daily quota, reject duplicate admissions, and persist a decision and pending paper position together.
+- Virtual entries and exits use read-only quote evidence. Monitoring applies take-profit, stop-loss, and holding-time rules.
+- Durable retry leases retain a small number of candidates with temporarily incomplete market evidence. Retries still pass through the full policy.
+- A GET-only HTTP API exposes dashboard projections rather than provider credentials or raw social evidence.
 
-1. Copy `.env.example` to ignored `.env.local` and provide only the server-side credentials you own.
+The active `bold-momentum-v3` configuration defaults to $100 per virtual position, at most three active positions and 30 new admissions per UTC day. These are experiment parameters, not return forecasts. See the [policy and trade-offs](docs/engineering.md#policy-and-trade-offs).
 
-   - `PAPER_AUTOMATION_ENABLED=false` is the safe default. Set it to `true` only for local paper automation.
-   - `HELIUS_API_KEY` is required when automation is enabled; the bot derives the Helius Mainnet RPC URL itself and does not fall back to public Solana RPC.
-   - `PAPER_QUOTE_MINT` defaults to canonical Solana Mainnet USDC. It is the read-only quote mint used for virtual paper entries and exits.
-   - `TWITTERAPIIO_API_KEY` enables bounded, exact-mint social evidence searches.
-   - `HERMES_API_KEY` enables the restricted local Hermes verdict adapter with provider `openai-codex` and model `gpt-5.6-sol`.
-   - `JUPITER_API_KEY` enables Jupiter read-only quote requests. The bot uses quote responses as evidence only.
-2. Initialize the project-owned Supabase files from the Coding Lab root:
+## Stack and source map
 
-   ```bash
-   uv run labctl init-supabase solana-hype-paper-bot --json
-   ```
+| Part | Technology | Source |
+| --- | --- | --- |
+| Research service and policy | Go; domain/application interfaces | [`cmd/paper-bot`](cmd/paper-bot), [`internal`](internal) |
+| Persistence | PostgreSQL through local Supabase; Ent; Atlas SQL migrations | [`ent`](ent), [`supabase/migrations`](supabase/migrations) |
+| Dashboard | React, TypeScript, Vite, TanStack Query | [`dashboard`](dashboard) |
+| Local packaging | Docker Compose; Go API and nginx-served dashboard | [`compose.yaml`](compose.yaml) |
+| Verification | Go tests/race detector, PostgreSQL contracts, Vitest, shell guards | [`tests`](tests), [CI workflow](.github/workflows/ci.yml) |
 
-3. Install dashboard dependencies:
+The Go module is `github.com/SourceSenseiTheRealOne/solana-market-research`. Dependency versions are recorded in `go.mod` and the dashboard lockfile.
 
-   ```bash
-   pnpm --dir dashboard install
-   ```
+## Get started
 
-   On this Windows Git-Bash host, use `pnpm.cmd` because the Corepack shell shim is broken.
-
-## Local containers
-
-Compose runs only the paper-bot API and dashboard. It never creates Postgres: use the project-owned local Supabase stack and place its server-side `DATABASE_URL` in ignored `.env.local` before starting containers.
-
-```bash
-docker compose up --build
+```sh
+git clone https://github.com/SourceSenseiTheRealOne/solana-market-research.git
+cd solana-market-research
+go mod download
+pnpm --dir dashboard install --frozen-lockfile
 ```
 
-- Dashboard: `http://127.0.0.1:4173/`
-- Read-only API health: `http://127.0.0.1:8080/healthz`
-- Read-only dashboard API: `http://127.0.0.1:8080/api/v1/dashboard`
+Use Go 1.26.2, Node.js 22 or a compatible newer release, and pnpm 10.30.1. Docker and the Supabase CLI are needed for the local runtime. Follow [local setup](docs/local-setup.md) to start a database and configure the service. Automation defaults to disabled; installing dependencies or running tests does not enable it.
 
-The API container receives `APP_ENV=container` and listens on its private container interface; Compose publishes application ports only through `127.0.0.1`. Its ignored logs and retained reports live in the named `runtime-data` volume at `/app/var`. Provider credentials remain server-side in `.env.local`; the browser receives none.
-
-When paper automation is enabled, the Go process scans every 5 minutes and monitors open virtual positions every 30 seconds. Each scan uses DexScreener token hints first, then the GeckoTerminal new-pool page, and evaluates at most five matched fresh pools. A candidate whose market payload is temporarily incomplete enters a durable five-slot retry queue; after each position-monitor tick, at most one due candidate is retried through the complete policy for up to 10 minutes. A zero-liquidity Pump.fun pair can resolve its mint once to a strictly newer migrated DexScreener pool, but no pre-graduation fill is simulated and reciprocal Jupiter routes remain mandatory. TwitterAPI.io is called only after deterministic eligibility, the restricted Hermes verdict remains mandatory, and the process can only admit/open local virtual paper positions.
+When explicitly started, the dashboard is at `http://127.0.0.1:4173/` and the API health route is `http://127.0.0.1:8080/healthz`. Neither is a public demo URL.
 
 ## Verification
 
-```bash
+```sh
 go test ./...
 go test -race ./...
 go vet ./...
@@ -71,6 +56,12 @@ bash tests/verify-github-actions.sh
 git diff --check
 ```
 
-Do not run `docker compose config` in a credential-bearing checkout: Compose may interpolate ignored dotenv values into command output. The static topology verifier above checks the Compose safety boundary without loading dotenv files or requiring Docker.
+Database-backed tests need `TEST_DATABASE_URL` pointing to a disposable database with the committed migrations applied. Without it, those tests skip; a green unit run alone does not prove persistence. CI creates an ephemeral PostgreSQL service and runs the repository/integration contracts separately. Never use the research database for tests.
 
-The application, database schema, provider adapters, and container runtime are being implemented in bounded RED → GREEN → REFACTOR slices. See `context/README.md` for the approved architecture and security boundaries.
+On Windows Git-Bash, use `pnpm.cmd` if the `pnpm` shim fails. The Go race detector also requires a supported C toolchain. Do not run `docker compose config` or the existing `make verify` target in a credential-bearing checkout: they can print interpolated environment values. Use the explicit commands above.
+
+## Limits
+
+This is a single-operator research system, not a distributed trading platform or audited financial product. Missing provider evidence can prevent admission or valuation; quote-based simulations cannot reproduce executable fills under all market conditions. The dashboard has no authentication because it is restricted to loopback. Do not expose it publicly without a separate security design.
+
+The repository and display name were renamed from Solana Hype Paper Bot. Existing Compose, Supabase, and local Hermes identities intentionally retain `solana-hype-paper-bot` so stored data and configuration remain associated with the same runtime. See the [rename boundary](docs/local-setup.md#existing-installations).

@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/verdict"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/verdict"
 )
 
 // Verdict is the model entity for the Verdict schema.
