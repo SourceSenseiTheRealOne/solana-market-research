@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidatesnapshot"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/predicate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidatesnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/predicate"
 )
 
 // CandidateSnapshotDelete is the builder for deleting a CandidateSnapshot entity.

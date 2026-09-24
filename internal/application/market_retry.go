@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 const (

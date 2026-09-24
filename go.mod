@@ -1,4 +1,4 @@
-module github.com/SourceSenseiTheRealOne/solana-hype-paper-bot
+module github.com/SourceSenseiTheRealOne/solana-market-research
 
 go 1.26.2
 

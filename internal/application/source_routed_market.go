@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 // SourceRoutedMarket keeps independent discovery sources independent during

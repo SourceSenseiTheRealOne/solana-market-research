@@ -25,7 +25,7 @@ function Dashboard() {
   return (
     <main className="dashboard-shell">
       <header className="page-header">
-        <div><p className="eyebrow">Solana Hype Paper Bot</p><h1>Paper bot operations</h1></div>
+        <div><p className="eyebrow">Solana Market Research</p><h1>Paper bot operations</h1></div>
         <p className="safety-label">Read-only · paper trades only</p>
       </header>
       {dashboard.isPending ? <LoadingPanel /> : null}

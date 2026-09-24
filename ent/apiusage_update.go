@@ -11,8 +11,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/apiusage"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/predicate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/apiusage"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/predicate"
 )
 
 // APIUsageUpdate is the builder for updating APIUsage entities.

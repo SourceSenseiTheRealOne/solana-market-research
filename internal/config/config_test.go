@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/config"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/config"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestValidateRejectsUnsafeStrategyLimits(t *testing.T) {

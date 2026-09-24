@@ -11,8 +11,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidatesnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidatesnapshot"
 )
 
 // CandidateSnapshotCreate is the builder for creating a CandidateSnapshot entity.

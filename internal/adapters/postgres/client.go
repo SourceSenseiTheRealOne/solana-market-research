@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent/dialect"
 	entsql "entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jackc/pgx/v5/stdlib"

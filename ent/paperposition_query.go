@@ -12,12 +12,12 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionevent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionmark"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/predicate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/tradedecision"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionevent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionmark"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/predicate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/tradedecision"
 )
 
 // PaperPositionQuery is the builder for querying PaperPosition entities.

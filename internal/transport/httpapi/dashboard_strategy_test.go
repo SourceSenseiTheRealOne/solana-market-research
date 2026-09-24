@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/transport/httpapi"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/transport/httpapi"
 )
 
 func TestHandlerServesActiveStrategyWithEmptyTradeData(t *testing.T) {

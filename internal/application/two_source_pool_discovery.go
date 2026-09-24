@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/ports"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/ports"
 )
 
 const twoSourcePoolCap = 5

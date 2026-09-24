@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionevent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionmark"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionevent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionmark"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestPositionRepositoryTransitionsPendingToOpenExactlyOnce(t *testing.T) {

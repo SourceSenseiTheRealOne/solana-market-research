@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 type VerdictRecord struct {
