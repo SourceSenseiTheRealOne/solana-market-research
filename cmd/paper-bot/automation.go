@@ -8,13 +8,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/httpclient"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/reporting"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/config"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/httpclient"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/reporting"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/config"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 const (

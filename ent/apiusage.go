@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/apiusage"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/apiusage"
 )
 
 // APIUsage is the model entity for the APIUsage schema.

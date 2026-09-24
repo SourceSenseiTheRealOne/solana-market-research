@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionmark"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/tradedecision"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionmark"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/tradedecision"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 type PositionRepository struct {

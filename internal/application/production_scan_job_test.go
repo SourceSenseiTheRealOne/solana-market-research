@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestProductionScanJobSkipsStalePoolsBeforeDeterministicEvaluation(t *testing.T) {

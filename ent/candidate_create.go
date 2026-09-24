@@ -11,12 +11,12 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/candidatesnapshot"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/socialsnapshot"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/tradedecision"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/verdict"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/candidatesnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/socialsnapshot"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/tradedecision"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/verdict"
 )
 
 // CandidateCreate is the builder for creating a Candidate entity.

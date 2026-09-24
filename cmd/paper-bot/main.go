@@ -10,10 +10,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/config"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/transport/httpapi"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/config"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/transport/httpapi"
 )
 
 const shutdownTimeout = 10 * time.Second

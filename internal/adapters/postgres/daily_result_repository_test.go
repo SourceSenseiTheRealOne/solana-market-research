@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/dailyresult"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/paperposition"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/positionmark"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/adapters/postgres"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/dailyresult"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/paperposition"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/positionmark"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/adapters/postgres"
 )
 
 func TestDailyResultRepositoryReconcilesTerminalPositionsIdempotently(t *testing.T) {

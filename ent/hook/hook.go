@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
 )
 
 // The APIUsageFunc type is an adapter to allow the use of ordinary

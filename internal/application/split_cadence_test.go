@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
 )
 
 func TestSplitCadenceRunsInitialScanMonitorAndRetrySerially(t *testing.T) {

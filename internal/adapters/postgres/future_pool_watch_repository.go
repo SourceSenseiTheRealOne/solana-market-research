@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/botstate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/application"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/botstate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/application"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 const (

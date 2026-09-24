@@ -3,7 +3,7 @@ package domain_test
 import (
 	"testing"
 
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/internal/domain"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/internal/domain"
 )
 
 func TestParsePercentageBPSRoundsHalfAwayFromZero(t *testing.T) {

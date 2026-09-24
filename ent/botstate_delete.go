@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/botstate"
-	"github.com/SourceSenseiTheRealOne/solana-hype-paper-bot/ent/predicate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/botstate"
+	"github.com/SourceSenseiTheRealOne/solana-market-research/ent/predicate"
 )
 
 // BotStateDelete is the builder for deleting a BotState entity.
